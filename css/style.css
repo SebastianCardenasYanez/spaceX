@@ -10,9 +10,12 @@ body{
 
 .main {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 25% 50% 25%;
 
 }
+
+/*---   LEFT  ---*/
+
 .section__main_left {
     display: flex;
     flex-direction: column;
@@ -28,16 +31,38 @@ body{
     flex-direction: column;
 }
 
+/*---   CENTER  ---*/
+
 .section__main_center {
     display: flex;
+    justify-content: center;
     text-align: center;
 }
+
 .article__section_center h1 {
     color: #fff;
 }
+
+/*---   RIGHT  ---*/
+
 .section__main_right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .article__section_right {
+    display: flex;
+    flex-direction: column;
+}
+
+.article__section_right span {
+    color: var(--color-4);
+}
+
+.text__bar_right{
+    display: flex;
+    gap: 10px;
+    color: #fff;
 }
 
 
