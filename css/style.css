@@ -1,1 +1,35 @@
 @import url(variables.css);
+
+*{
+    font-family: sans-serif;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.section__footer {
+    width: 60%;
+    height: 70px;
+    background-color: var(--color-1);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto;
+}
+.article__footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.article__footer img{
+    width: 30px;
+}
