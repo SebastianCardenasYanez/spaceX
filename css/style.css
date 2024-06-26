@@ -4,6 +4,42 @@
     font-family: sans-serif;
 }
 
+body{
+    background-color: var(--color-1);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.section__main_left {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-3);
+    gap: 30px;
+}
+.article__section_left {
+    display: flex;
+}
+
+.text__section_left{
+    display: flex;
+    flex-direction: column;
+}
+
+.section__main_center {
+    display: flex;
+    text-align: center;
+}
+.article__section_center h1 {
+    color: #fff;
+}
+.section__main_right {
+}
+.article__section_right {
+}
+
 
 .footer {
     position: fixed;
