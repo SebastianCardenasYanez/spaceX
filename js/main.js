@@ -2,9 +2,6 @@ import {leftSection} from "./componetsModule/templates.js";
 import {getNameRocket} from "./module/rockets.js";
 
 let pages = document.querySelectorAll(".page");
-let page__2 = document.querySelector("#page__2");
-let page__3 = document.querySelector("#page__3");
-let page__4 = document.querySelector("#page__4");
 let main__title = document.querySelector(".main__title");
 
 let page;
