@@ -7,15 +7,6 @@ export const getNameRocket = async(page) => {
         },
         body : JSON.stringify({
             options : {
-                select : {
-                    name : 1,
-                    height : 1,
-                    mass : {
-                        kg : 1
-                    },
-                    active : 1,
-                    description : 1
-                },
                 page,
                 limit : 1
             }     
