@@ -9,36 +9,19 @@ let main__title = document.querySelector(".main__title");
 
 let page;
 let nameRocket;
+let section__main_left = document.querySelector(".section__main_left");
+
+let num = 0;
 
 pages.forEach(pag => {
+    num++;
+    pag.id = num;
+    console.log(pag)
     pag.addEventListener("click", async(e) => {
-        page = 1
+        page = pag.id
         nameRocket =await getNameRocket(page);
-        console.log(nameRocket.docs[0].name);
+        section__main_left.innerHTML = await leftSection(nameRocket)
         main__title.innerHTML = nameRocket.docs[0].name;
+        console.log(nameRocket)
     })
 })
-
-// page__2.addEventListener("click", async(e) => {
-//     page = 2
-//     nameRocket = await getNameRocket(page);
-//     console.log(nameRocket.docs[0].name);
-//     main__title.innerHTML = nameRocket.docs[0].name;
-//     console.log(nameRocket)
-// })
-
-// page__3.addEventListener("click", async(e) => {
-//     page = 3
-//     nameRocket = await getNameRocket(page);
-//     console.log(nameRocket.docs[0].name);
-//     main__title.innerHTML = nameRocket.docs[0].name;
-//     console.log(nameRocket);
-// })
-
-// page__4.addEventListener("click", async(e) => {
-//     page = 4
-//     nameRocket = await getNameRocket(page);
-//     console.log(nameRocket.docs[0].name);
-//     main__title.innerHTML = nameRocket.docs[0].name;
-//     console.log(nameRocket)
-// })
