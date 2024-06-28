@@ -108,3 +108,49 @@ export const centerSection = async (nameRocket) => {
 
     return plantilla
 }
+
+export const rightSection = async (nameRocket) => {
+    let plantilla = "";
+    plantilla += /*html*/`
+    <article class="article__section_right">
+        <span>Rocket weight</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].mass.kg}kg</strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+    <span>Rocket Height</span>
+    <div class="text__bar_right">
+        <progress>progess bar of data</progress>
+        <strong>${nameRocket.docs[0].height.meters}m</strong>
+    </div>
+    </article>
+
+    <article class="article__section_right">
+        <span>${nameRocket.docs[0].payload_weights[0].name}</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].payload_weights[0].kg}kg</strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+        <span>Rocket diameter</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].diameter.meters}m/strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+    <span>Height rocket shield</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].second_stage.payloads.composite_fairing.height.meters}m</strong>
+        </div>
+    </article>
+    `
+    return plantilla
+}
