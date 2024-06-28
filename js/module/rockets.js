@@ -1,27 +1,194 @@
-export const getNameRocket = async(page) => {
-    console.log(page);
-    let options = {
-        method : "POST",
-        headers : {
-            "content-type" : "application/json"
-        },
-        body : JSON.stringify({
-            options : {
-                page,
-                limit : 1
-            }     
-        })
-    };
-    console.log(options);
-    return fetch("https://api.spacexdata.com/v4/rockets/query", options)
-    .then(data => {
-        if (!data.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return data.json();
+import {getNameRocket} from "../componetsModule/getData.js";
+
+export const leftSection = async (nameRocket) => {
+    let plantilla = "";
+        plantilla = /*html*/`
+        <article class="article__section_left">
+            <div class="text__section_left">
+                <h3 class="title__descrip" >Description</h3>
+                <p>${nameRocket.docs[0].description}</p> 
+            </div>
+        </article>
+
+        <article class="article__section_left">
+            <img src="storage/coin.svg" alt="">
+            <div class="text__section_left">
+                <strong>Cost per launch</strong>
+                <p>${nameRocket.docs[0].cost_per_launch}</p> 
+            </div>
+        </article>
+
+        <article class="article__section_left">
+        <img src="storage/flag.svg" alt="">
+            <div class="text__section_left">
+                <strong>Country</strong>
+                <p>${nameRocket.docs[0].country}</p> 
+            </div>
+        </article>
+
+        <article class="article__section_left">
+        <img src="storage/Check Icon.svg" alt="">
+            <div class="text__section_left">
+                <strong>Succes rate</strong>
+                <p>${nameRocket.docs[0].success_rate_pct}%</p> 
+            </div>
+        </article>
+
+        <article class="article__section_left">
+        <img src="storage/launcer.svg" alt="">
+            <div class="text__section_left">
+                <strong>First flight</strong>
+                <p>${nameRocket.docs[0].first_flight}</p> 
+            </div>
+        </article>
+        `
+    return plantilla
+}
+
+export const centerSection = async (nameRocket) => {
+    let plantilla = "";
+
+    plantilla += /*html*/`
+    <div class="progress-bar" style="background: 
+    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+    </div>
+
+    <div class="progress-bar" style="background: 
+    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+    </div>
+
+    <div class="progress-bar" style="background: 
+    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+    </div>
+    
+    <article class="article__section_center">
+        <strong class="title__table">Stage 1</strong>
+        <hr>
+        <span>Reusable</span><strong>${nameRocket.docs[0].first_stage.reusable}</strong>
+        <span>Engines</span><strong>${nameRocket.docs[0].first_stage.engines}</strong>
+        <span>Fuel amount</span><strong>${nameRocket.docs[0].first_stage.fuel_amount_tons}</strong>
+        <span>Burn time</span><strong>${nameRocket.docs[0].first_stage.burn_time_sec}</strong>
+    </article>
+    <div class="main__imges" >
+    `;
+
+    let rocket = nameRocket.docs[0].flickr_images
+    rocket.forEach(async images => {
+        plantilla += /*html*/`
+            <img class="images__rockets" src="${images}" referrerpolicy="no-referrer">
+            `
     })
-    .catch(error => {
-        console.error("There was a problem with the fetch operation:", error);
-        throw error;
-    });
+
+    plantilla += /*html*/`
+    </div>
+    <article class="article__section_center">
+                <strong class="title__table">Stage 2</strong>
+                <hr>
+                <span>Reusable</span><strong>${nameRocket.docs[0].first_stage.reusable}</strong>
+                <span>Engines</span><strong>${nameRocket.docs[0].first_stage.engines}</strong>
+                <span>Fuel amount</span><strong>${nameRocket.docs[0].first_stage.fuel_amount_tons}</strong>
+                <span>Burn time</span><strong>${nameRocket.docs[0].first_stage.burn_time_sec}</strong>
+            </article>
+
+            <article class="article__section_center">
+                <strong class="title__table">INFORMATION ROCKET</strong>
+                <hr>
+                <span>Type</span><strong>${nameRocket.docs[0].type}</strong>
+                <span>Rocket service</span><strong>${nameRocket.docs[0].active == true ? nameRocket.docs[0].active : "No service"}</strong>
+                <span>Number of stages</span><strong>${nameRocket.docs[0].stages}</strong>
+                <span>Boosters</span><strong>${nameRocket.docs[0].boosters}</strong>
+            </article>
+
+            <article class="article__section_center">
+                <strong class="title__table">ENGINE INFORMATION</strong>
+                <hr>
+                <span>Type</span><strong>${nameRocket.docs[0].engines.type}</strong>
+                <span>Maximum power loss</span><strong>${nameRocket.docs[0].engines.engine_loss_max}</strong>
+                <span>Engine availability</span><strong>${nameRocket.docs[0].engines.layout}</strong>
+                <span>Number of engines</span><strong>${nameRocket.docs[0].engines.number}</strong>
+            </article>
+    `;
+
+    return plantilla
+}
+
+export const rightSection = async (nameRocket) => {
+    let plantilla = "";
+    plantilla += /*html*/`
+    <article class="article__section_right">
+        <span>Rocket weight</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].mass.kg}kg</strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+    <span>Rocket Height</span>
+    <div class="text__bar_right">
+        <progress>progess bar of data</progress>
+        <strong>${nameRocket.docs[0].height.meters}m</strong>
+    </div>
+    </article>
+
+    <article class="article__section_right">
+        <span>${nameRocket.docs[0].payload_weights[0].name}</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].payload_weights[0].kg}kg</strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+        <span>Rocket diameter</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].diameter.meters}m</strong>
+        </div>
+    </article>
+
+    <article class="article__section_right">
+    <span>Height rocket shield</span>
+        <div class="text__bar_right">
+            <progress>progess bar of data</progress>
+            <strong>${nameRocket.docs[0].second_stage.payloads.composite_fairing.height.meters}m</strong>
+        </div>
+    </article>
+    `
+    return plantilla
+}
+
+
+
+
+
+let pages = document.querySelectorAll(".page");
+let main__title = document.querySelector(".main__title");
+let section__main_center = document.querySelector(".section__main_center")
+let section__main_left = document.querySelector(".section__main_left");
+let section__main_right = document.querySelector(".section__main_right")
+
+
+export const templateRocket = async() => {
+    let page;
+    let nameRocket;
+    let num = 0;
+    
+    pages.forEach(pag => {
+        num++;
+        pag.id = num;
+        console.log(pag)
+        pag.addEventListener("click", async(e) => {
+            page = pag.id
+            nameRocket =await getNameRocket(page);
+            section__main_left.innerHTML = await leftSection(nameRocket);
+            section__main_center.innerHTML = await centerSection(nameRocket);
+            section__main_right.innerHTML = await rightSection(nameRocket);
+            main__title.innerHTML = nameRocket.docs[0].name;
+            console.log(nameRocket)
+        })
+    })
 }
