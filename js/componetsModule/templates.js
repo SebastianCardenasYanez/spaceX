@@ -14,7 +14,7 @@ export const leftSection = async (nameRocket) => {
         </article>
 
         <article class="article__section_left">
-            <img src="storage/Check Icon.svg" alt="">
+            <img src="storage/coin.svg" alt="">
             <div class="text__section_left">
                 <strong>Cost per launch</strong>
                 <p>${nameRocket.docs[0].cost_per_launch}</p> 
@@ -22,7 +22,7 @@ export const leftSection = async (nameRocket) => {
         </article>
 
         <article class="article__section_left">
-        <img src="storage/Check Icon.svg" alt="">
+        <img src="storage/flag.svg" alt="">
             <div class="text__section_left">
                 <strong>Country</strong>
                 <p>${nameRocket.docs[0].country}</p> 
@@ -38,7 +38,7 @@ export const leftSection = async (nameRocket) => {
         </article>
 
         <article class="article__section_left">
-        <img src="storage/Check Icon.svg" alt="">
+        <img src="storage/launcer.svg" alt="">
             <div class="text__section_left">
                 <strong>First flight</strong>
                 <p>${nameRocket.docs[0].first_flight}</p> 
@@ -140,7 +140,7 @@ export const rightSection = async (nameRocket) => {
         <span>Rocket diameter</span>
         <div class="text__bar_right">
             <progress>progess bar of data</progress>
-            <strong>${nameRocket.docs[0].diameter.meters}m/strong>
+            <strong>${nameRocket.docs[0].diameter.meters}m</strong>
         </div>
     </article>
 
