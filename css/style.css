@@ -146,7 +146,7 @@ body{
     color: steelblue;
   }
   .css3:before {
-    content: "css3";
+    content: "speed";
     background: #000000 content-box;
     transform: rotate(-153deg);
     text-transform: uppercase;
@@ -233,6 +233,24 @@ body{
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: space-around;
+}
+
+.triangle__left{
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 70px solid transparent; 
+    border-bottom: 70px solid #292d7923;
+    transform: rotate(-90deg);
+}
+
+.triangle__right{
+    width: 0;
+    height: 0;
+    border-left: 0px solid transparent;
+    border-right: 70px solid transparent; 
+    border-bottom: 70px solid #292d7923; 
+    transform: rotate(0deg);
 }
 
 .article__footer {

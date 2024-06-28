@@ -52,7 +52,10 @@ export const centerSection = async (nameRocket) => {
     let plantilla = "";
 
     plantilla += /*html*/`
-    <div class="circular-progress css3"></div>
+    <div class="progress-bar" style="background: 
+    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+    </div>
 
     <div class="circular-progress css3"></div>
 
