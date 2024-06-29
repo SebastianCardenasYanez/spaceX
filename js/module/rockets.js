@@ -1,4 +1,6 @@
 import {getNameRocket} from "../componetsModule/getData.js";
+import {footerRocket} from "../componetsModule/footers.js";
+import {eventsListener} from "../componetsModule/events.js";
 
 export const leftSection = async (nameRocket) => {
     let plantilla = "";
@@ -181,7 +183,7 @@ let main__title = document.querySelector(".main__title");
 let section__main_center = document.querySelector(".section__main_center")
 let section__main_left = document.querySelector(".section__main_left");
 let section__main_right = document.querySelector(".section__main_right")
-
+let footer = document.querySelector(".footer")
 
 export const templateRocket = async() => {
     let page;
@@ -198,8 +200,11 @@ export const templateRocket = async() => {
             section__main_left.innerHTML = await leftSection(nameRocket);
             section__main_center.innerHTML = await centerSection(nameRocket);
             section__main_right.innerHTML = await rightSection(nameRocket);
+            footer.innerHTML = await footerRocket();
             main__title.innerHTML = nameRocket.docs[0].name;
+            await eventsListener()
             console.log(nameRocket)
+
         })
     })
 }
