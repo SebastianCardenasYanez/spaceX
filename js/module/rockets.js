@@ -193,6 +193,7 @@ export const templateRocket = async() => {
     pages.forEach(pag => {
         num++;
         pag.id = num;
+        pag.textContent = num;
         console.log(pag)
         pag.addEventListener("click", async(e) => {
             page = pag.id

@@ -1,5 +1,10 @@
 import {templateRocket} from "../module/rockets.js";
+import {templateCapsule} from "../module/capsules.js";
 
+
+let section__main_center = document.querySelector(".section__main_center")
+let section__main_left = document.querySelector(".section__main_left");
+let section__main_right = document.querySelector(".section__main_right")
 
 export const eventsListener = async () => {
 let rockets__footer = document.querySelector("#rockets__footer");
@@ -20,12 +25,18 @@ let starlink__footer = document.querySelector("#starlink__footer");
 
 rockets__footer?.addEventListener('click', async() => {
     console.log('Rockets footer clicked');
+    section__main_left.innerHTML = ''
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = ''
     await templateRocket()
   });
   
   capsules__footer?.addEventListener('click', async() => {
     console.log('Capsules footer clicked');
-    // Acción específica para capsules__footer
+    section__main_left.innerHTML = ''
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = ''
+    await templateCapsule()
   });
   
   crew__footer?.addEventListener('click', async() => {

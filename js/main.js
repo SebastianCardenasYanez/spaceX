@@ -8,6 +8,8 @@ let section__main_center = document.querySelector(".section__main_center")
 let section__main_left = document.querySelector(".section__main_left");
 let section__main_right = document.querySelector(".section__main_right")
 
-let templateRockets = await templateRocket();
-await eventsListener()
+await templateRocket();  
+await eventsListener();
 
+console.log(await templateRocket());
+console.log(await eventsListener());
