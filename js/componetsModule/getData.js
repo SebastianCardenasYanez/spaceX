@@ -28,3 +28,22 @@ export const getNameRocket = async(page) => {
         throw error;
     });
 }
+
+export const getCapsule = async(page) => {
+    console.log(page);
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/capsules/query", options)
+    let data = res.json();
+    return data;
+}
