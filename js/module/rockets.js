@@ -46,22 +46,33 @@ export const leftSection = async (nameRocket) => {
 }
 
 export const centerSection = async (nameRocket) => {
+    console.log(nameRocket)
     let plantilla = "";
 
     plantilla += /*html*/`
-    <div class="progress-bar" style="background: 
-    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
-    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+
+        <div class="progress-bar" style="background: 
+        radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+        conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].engines.thrust_vacuum.kN * 100 / 1960}%, rgba(255, 192, 203, 0) 0);  ">
+        <div>
+            <strong>Speed in space</strong>
+            <p>${(nameRocket.docs[0].engines.thrust_vacuum.kN * 100 / 1960).toFixed(2)} % </p>
+            <p>${nameRocket.docs[0].engines.thrust_vacuum.kN} kN</p>
+            <p>${nameRocket.docs[0].engines.thrust_vacuum.lbf} Lbf</p>
+        </div>
     </div>
 
-    <div class="progress-bar" style="background: 
-    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
-    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
-    </div>
+    <img src="../storage/rocketCenter.png" width="100%">
 
     <div class="progress-bar" style="background: 
-    radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
-    conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].first_stage.thrust_sea_level.kN / nameRocket.docs[0].engines.isp.sea_level  * 100}%, rgba(255, 192, 203, 0) 0);">
+        radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
+        conic-gradient(from 180deg, rgb(118, 189, 255) ${nameRocket.docs[0].engines.thrust_sea_level.kN * 100 / 1780}%, rgba(255, 192, 203, 0) 0);  ">
+        <div>
+            <strong>Atmospheric acceleration</strong>
+            <p>${(nameRocket.docs[0].engines.thrust_sea_level.kN * 100 / 1780).toFixed(2)} % </p>
+            <p>${nameRocket.docs[0].engines.thrust_sea_level.kN} kN</p>
+            <p>${nameRocket.docs[0].engines.thrust_sea_level.lbf} Lbf</p>
+        </div>
     </div>
     
     <article class="article__section_center">
@@ -121,7 +132,7 @@ export const rightSection = async (nameRocket) => {
     <article class="article__section_right">
         <span>Rocket weight</span>
         <div class="text__bar_right">
-            <progress>progess bar of data</progress>
+            <progress value="${nameRocket.docs[0].mass.kg}" max="${nameRocket.docs[0].mass.kg + nameRocket.docs[0].mass.lb}"></progress>
             <strong>${nameRocket.docs[0].mass.kg}kg</strong>
         </div>
     </article>
@@ -129,7 +140,7 @@ export const rightSection = async (nameRocket) => {
     <article class="article__section_right">
     <span>Rocket Height</span>
     <div class="text__bar_right">
-        <progress>progess bar of data</progress>
+        <progress value="${nameRocket.docs[0].height.meters}" max="${nameRocket.docs[0].height.meters + nameRocket.docs[0].height.feet}"></progress>
         <strong>${nameRocket.docs[0].height.meters}m</strong>
     </div>
     </article>
@@ -137,7 +148,7 @@ export const rightSection = async (nameRocket) => {
     <article class="article__section_right">
         <span>${nameRocket.docs[0].payload_weights[0].name}</span>
         <div class="text__bar_right">
-            <progress>progess bar of data</progress>
+            <progress value="${nameRocket.docs[0].payload_weights[0].kg}" max="${nameRocket.docs[0].payload_weights[0].kg}"  ></progress>
             <strong>${nameRocket.docs[0].payload_weights[0].kg}kg</strong>
         </div>
     </article>
@@ -145,7 +156,7 @@ export const rightSection = async (nameRocket) => {
     <article class="article__section_right">
         <span>Rocket diameter</span>
         <div class="text__bar_right">
-            <progress>progess bar of data</progress>
+            <progress value="${nameRocket.docs[0].diameter.meters}" max="${nameRocket.docs[0].diameter.feet}" ></progress>
             <strong>${nameRocket.docs[0].diameter.meters}m</strong>
         </div>
     </article>
@@ -153,7 +164,7 @@ export const rightSection = async (nameRocket) => {
     <article class="article__section_right">
     <span>Height rocket shield</span>
         <div class="text__bar_right">
-            <progress>progess bar of data</progress>
+            <progress value="${nameRocket.docs[0].second_stage.payloads.composite_fairing.height.feet}"  max="${nameRocket.docs[0].second_stage.payloads.composite_fairing.height.meters + nameRocket.docs[0].second_stage.payloads.composite_fairing.height.feet}"></progress>
             <strong>${nameRocket.docs[0].second_stage.payloads.composite_fairing.height.meters}m</strong>
         </div>
     </article>
