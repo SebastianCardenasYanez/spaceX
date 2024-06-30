@@ -64,7 +64,7 @@ export const centerSection = async (nameRocket) => {
         </div>
     </div>
 
-    <img src="../storage/rocketCenter.png" width="100%">
+    <img src="../storage/rocketCenter.png" width="320px" height='200px'>
 
     <div class="progress-bar" style="background: 
         radial-gradient(closest-side, rgb(31, 31, 31) 79%, transparent 80% 100%),
