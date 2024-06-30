@@ -10,6 +10,3 @@ let section__main_right = document.querySelector(".section__main_right")
 
 await templateRocket();  
 await eventsListener();
-
-console.log(await templateRocket());
-console.log(await eventsListener());
