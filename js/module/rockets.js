@@ -1,4 +1,4 @@
-import {getNameRocket} from "../componetsModule/getData.js";
+import {getNameRocket, getAllRockets} from "../componetsModule/getData.js";
 import {footerRocket} from "../componetsModule/footers.js";
 import {eventsListener} from "../componetsModule/events.js";
 
@@ -178,7 +178,7 @@ export const rightSection = async (nameRocket) => {
 
 
 
-let pages = document.querySelectorAll(".page");
+let pages = document.querySelector(".page");
 let main__title = document.querySelector(".main__title");
 let section__main_center = document.querySelector(".section__main_center")
 let section__main_left = document.querySelector(".section__main_left");
@@ -189,14 +189,24 @@ export const templateRocket = async() => {
     let page;
     let nameRocket;
     let num = 0;
-    
-    pages.forEach(pag => {
-        num++;
-        pag.id = num;
-        pag.textContent = num;
+    let allRockets = await getAllRockets();
+    console.log(allRockets);
+    for (let i = 0; i < allRockets.length; i++) {
+        allRockets[i]
+        let button = document.createElement('div')
+        button.textContent = i + 1
+        button.classList.add('page_btn');
+        console.log(allRockets[i])
+        pages.appendChild(button)
+    }
+    let page_btn = document.querySelectorAll(".page_btn")
+    page_btn.forEach(pag => {
+        // num++;
+        // pag.id = num;
+        // pag.textContent = num;
         console.log(pag)
         pag.addEventListener("click", async(e) => {
-            page = pag.id
+            page = pag.textContent
             nameRocket =await getNameRocket(page);
             section__main_left.innerHTML = await leftSection(nameRocket);
             section__main_center.innerHTML = await centerSection(nameRocket);
