@@ -185,12 +185,17 @@ let section__main_left = document.querySelector(".section__main_left");
 let section__main_right = document.querySelector(".section__main_right")
 let footer = document.querySelector(".footer")
 
+let currentGroup = 0;
+const groupSize = 4;
+
 export const templateRocket = async() => {
+    document.querySelector(".prev_page").remove();
+    document.querySelector(".next_page").remove();
+    currentGroup = 0;
     let page;
-    let nameRocket;
     pages.innerHTML = "";
     let allRockets = await getAllRockets();
-    nameRocket =await getNameRocket(1);
+    let nameRocket =await getNameRocket(1);
     section__main_left.innerHTML = await leftSection(nameRocket);
     section__main_center.innerHTML = await centerSection(nameRocket);
     section__main_right.innerHTML = await rightSection(nameRocket);
@@ -198,31 +203,63 @@ export const templateRocket = async() => {
     main__title.innerHTML = nameRocket.docs[0].name;
     await eventsListener()
     console.log(allRockets);
-    for (let i = 0; i < allRockets.length; i++) {
-        allRockets[i]
+
+    renderPageButtons(allRockets);
+    addNavigationButtons(allRockets.length);
+}
+
+const renderPageButtons = (allRockets) => {
+    currentGroup = 0;
+    pages.innerHTML = "";
+    let starPage = currentGroup * groupSize;
+    let endPage = Math.min(starPage + groupSize ,allRockets.length);
+
+    for (let i = starPage; i < endPage; i++) {
         let button = document.createElement('div')
         button.textContent = i + 1
         button.classList.add('page_btn');
-        console.log(allRockets[i])
         pages.appendChild(button)
     }
+
     let page_btn = document.querySelectorAll(".page_btn")
     page_btn.forEach(pag => {
-        // num++;
-        // pag.id = num;
-        // pag.textContent = num;
         console.log(pag)
         pag.addEventListener("click", async(e) => {
-            page = pag.textContent
-            nameRocket =await getNameRocket(page);
+            let page = pag.textContent
+            let nameRocket =await getNameRocket(page);
             section__main_left.innerHTML = await leftSection(nameRocket);
             section__main_center.innerHTML = await centerSection(nameRocket);
             section__main_right.innerHTML = await rightSection(nameRocket);
             footer.innerHTML = await footerRocket();
             main__title.innerHTML = nameRocket.docs[0].name;
             await eventsListener()
-            console.log(nameRocket)
-
         })
     })
-}
+};
+
+const addNavigationButtons = (totalRockets) => {
+    let prevButton = document.createElement('div');
+    prevButton.textContent = 'Prev';
+    prevButton.classList.add('prev_page');
+    document.querySelector(".containerPrev_page").appendChild(prevButton);
+    let selectPrevButton = document.querySelector(".prev_page")
+    selectPrevButton.addEventListener("click", async() => {
+        let allRockets = await getAllRockets();
+        if (currentGroup > 0) {
+            currentGroup--;
+            renderPageButtons(allRockets)
+        }
+    })
+    let nextButton = document.createElement('div');
+    nextButton.textContent = 'Prev';
+    nextButton.classList.add('next_page');
+    document.querySelector(".containerNext_page").appendChild(nextButton);
+    let selectNextButton = document.querySelector(".next_page")
+    selectNextButton.addEventListener("click", async() => {
+        let allRockets = await getAllRockets();
+        if ((currentGroup + 1) * groupSize < totalRockets) {
+            currentGroup++;
+            renderPageButtons(allRockets)
+        }
+    })
+};

@@ -60,44 +60,82 @@ let section__main_left = document.querySelector(".section__main_left");
 let section__main_right = document.querySelector(".section__main_right")
 let footer = document.querySelector(".footer")
 
+let currentGroup = 0;
+const groupSize = 4;
+
 export const templateCapsule = async() => {
+    document.querySelector(".prev_page").remove();
+    document.querySelector(".next_page").remove();
+    currentGroup = 0;
     let page;
     let capsule;
     pages.innerHTML = "";
+    let allCapsules = await getAllCapsules();
     capsule =await getCapsule(1);
-    console.log(capsule);
+    console.log(capsule.docs[0].serial);
     section__main_left.innerHTML = await leftSection(capsule);
     section__main_center.innerHTML = await centerSection(capsule);
     section__main_right.innerHTML = "";
+    main__title.innerHTML = capsule.docs[0].serial;
     footer.innerHTML = await footerCapsules();
     await eventsListener()
-    main__title.innerHTML = capsule.docs[0].serial;
-    let allCapsules = await getAllCapsules();
     footer.innerHTML = await footerCapsules();
-    for(let i = 0; i < allCapsules.length; i++) {
-        console.log(allCapsules[i]);
-        let button = document.createElement('div');
-        button.textContent = i + 1;
+
+    renderPageButtons(allCapsules);
+    addNavigationButtons(allCapsules.length);
+};
+
+const renderPageButtons = (allCapsules) => {
+    pages.innerHTML = "";
+    let starPage = currentGroup * groupSize;
+    let endPage = Math.min(starPage + groupSize ,allCapsules.length);
+    for (let i = starPage; i < endPage; i++) {
+        let button = document.createElement('div')
+        button.textContent = i + 1
         button.classList.add('page_btn');
-        pages.appendChild(button);
+        pages.appendChild(button)
     }
+
     let page_btn = document.querySelectorAll(".page_btn");
     page_btn.forEach(pag => {
-        // num++;
-        // pag.id = num;
-        // pag.textContent = num;
         main__title.innerHTML = "";
         console.log(pag)
         pag.addEventListener("click", async(e) => {
-            page = pag.textContent;
-            capsule =await getCapsule(page);
-            console.log(capsule);
+            let page = pag.textContent;
+            let capsule =await getCapsule(page);
+            main__title.innerHTML = capsule.docs[0].serial;
             section__main_left.innerHTML = await leftSection(capsule);
             section__main_center.innerHTML = await centerSection(capsule);
             section__main_right.innerHTML = "";
             footer.innerHTML = await footerCapsules();
             await eventsListener()
-            main__title.innerHTML = capsule.docs[0].serial;
  })
 })
-}
+};
+
+const addNavigationButtons = async(totalCapsules) => {
+    let prevButton = document.createElement('div');
+    prevButton.textContent = 'Prev';
+    prevButton.classList.add('prev_page');
+    document.querySelector(".containerPrev_page").appendChild(prevButton);
+    let selectPrevButton = document.querySelector(".prev_page")
+    let allCapsules = await getAllCapsules();
+    selectPrevButton.addEventListener("click", () => {
+        if (currentGroup > 0) {
+            currentGroup--;
+            renderPageButtons(allCapsules)
+        }
+    })
+    let nextButton = document.createElement('div');
+    nextButton.textContent = 'Prev';
+    nextButton.classList.add('next_page');
+    document.querySelector(".containerNext_page").appendChild(nextButton);
+    let selectNextButton = document.querySelector(".next_page")
+    selectNextButton.addEventListener("click", async() => {
+        let allCapsules = await getAllCapsules();
+        if ((currentGroup + 1) * groupSize < totalCapsules) {
+            currentGroup++;
+            renderPageButtons(allCapsules)
+        }
+    })
+};
