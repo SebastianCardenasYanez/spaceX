@@ -54,6 +54,11 @@ export const getCapsule = async(page) => {
     return data;
 };
 
+export const getAllCapsules = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/capsules");
+    let data = res.json();
+    return data;
+};
 
 
 export const getCrew = async(page) => {

@@ -1,4 +1,4 @@
-import {getCapsule} from "../componetsModule/getData.js";
+import {getCapsule, getAllCapsules} from "../componetsModule/getData.js";
 import {footerCapsules} from "../componetsModule/footers.js";
 import {eventsListener} from "../componetsModule/events.js";
 
@@ -53,6 +53,7 @@ export const centerSection = async(capsules) => {
     `;
     return plantilla
 };
+let pages = document.querySelector(".page"); 
 let main__title = document.querySelector(".main__title");
 let section__main_center = document.querySelector(".section__main_center");
 let section__main_left = document.querySelector(".section__main_left");
@@ -60,19 +61,35 @@ let section__main_right = document.querySelector(".section__main_right")
 let footer = document.querySelector(".footer")
 
 export const templateCapsule = async() => {
-    let pages = document.querySelectorAll(".page"); 
     let page;
     let capsule;
-    let num = 0;
+    pages.innerHTML = "";
+    capsule =await getCapsule(1);
+    console.log(capsule);
+    section__main_left.innerHTML = await leftSection(capsule);
+    section__main_center.innerHTML = await centerSection(capsule);
+    section__main_right.innerHTML = "";
     footer.innerHTML = await footerCapsules();
-    pages.forEach(pag => {
-        num++;
-        pag.id = num;
-        pag.textContent = num;
+    await eventsListener()
+    main__title.innerHTML = capsule.docs[0].serial;
+    let allCapsules = await getAllCapsules();
+    footer.innerHTML = await footerCapsules();
+    for(let i = 0; i < allCapsules.length; i++) {
+        console.log(allCapsules[i]);
+        let button = document.createElement('div');
+        button.textContent = i + 1;
+        button.classList.add('page_btn');
+        pages.appendChild(button);
+    }
+    let page_btn = document.querySelectorAll(".page_btn");
+    page_btn.forEach(pag => {
+        // num++;
+        // pag.id = num;
+        // pag.textContent = num;
         main__title.innerHTML = "";
         console.log(pag)
         pag.addEventListener("click", async(e) => {
-            page = pag.id
+            page = pag.textContent;
             capsule =await getCapsule(page);
             console.log(capsule);
             section__main_left.innerHTML = await leftSection(capsule);
