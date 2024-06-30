@@ -188,8 +188,15 @@ let footer = document.querySelector(".footer")
 export const templateRocket = async() => {
     let page;
     let nameRocket;
-    let num = 0;
+    pages.innerHTML = "";
     let allRockets = await getAllRockets();
+    nameRocket =await getNameRocket(1);
+    section__main_left.innerHTML = await leftSection(nameRocket);
+    section__main_center.innerHTML = await centerSection(nameRocket);
+    section__main_right.innerHTML = await rightSection(nameRocket);
+    footer.innerHTML = await footerRocket();
+    main__title.innerHTML = nameRocket.docs[0].name;
+    await eventsListener()
     console.log(allRockets);
     for (let i = 0; i < allRockets.length; i++) {
         allRockets[i]
