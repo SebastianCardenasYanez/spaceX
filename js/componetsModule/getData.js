@@ -29,6 +29,12 @@ export const getNameRocket = async(page) => {
     });
 }
 
+export const getAllRockets = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/rockets");
+    let data = res.json();
+    return data;
+};
+
 export const getCapsule = async(page) => {
     console.log(page);
     let options = {
@@ -46,4 +52,259 @@ export const getCapsule = async(page) => {
     let res = await fetch("https://api.spacexdata.com/v4/capsules/query", options)
     let data = res.json();
     return data;
-}
+};
+
+
+
+export const getCrew = async(page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/crew/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+export const getLaunch = async(page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/launch/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+export const getCores = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/cores/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+
+export const getLaunchPad = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/launchPads/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+export const getShip = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/ship/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+
+export const getCompany = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/company/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+
+export const getDregons = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/dregons/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+export const getHistory = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/history/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+export const getLaunchPads = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/launchPads/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+
+export const getPayLoads = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/payLoads/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+export const getRoadster = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/roadster/query", options)
+    let data = res.json();
+    return data;
+};
+
+
+
+
+
+export const getStarlink = async (page) => {
+    let options = {
+        method : "POST",
+        headers : {
+            "content-type" : "application/json"
+        },
+        body : JSON.stringify({
+            options : {
+                page,
+                limit : 1
+            }
+        })
+    };
+    let res = await fetch("https://api.spacexdata.com/v4/starlink/query", options)
+    let data = res.json();
+    return data;
+};
