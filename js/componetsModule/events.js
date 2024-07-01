@@ -1,5 +1,6 @@
 import {templateRocket} from "../module/rockets.js";
 import {templateCapsule} from "../module/capsules.js";
+import {templateCrew} from "../module/crew.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -41,7 +42,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   crew__footer?.addEventListener('click', async() => {
     console.log('Crew footer clicked');
-    // Acción específica para crew__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateCrew()
   });
   
   launches__footer?.addEventListener('click', async() => {

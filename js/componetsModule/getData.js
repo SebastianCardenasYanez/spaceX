@@ -79,8 +79,11 @@ export const getCrew = async(page) => {
     return data;
 };
 
-
-
+export const getAllCrew = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/crew");
+    let data = res.json();
+    return data;
+};
 
 export const getLaunch = async(page) => {
     let options = {

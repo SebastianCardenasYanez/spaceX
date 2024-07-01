@@ -63,6 +63,7 @@ body{
     grid-template-rows: auto auto auto;
     justify-content: center;
     text-align: center;
+    justify-items: center;
 }
 
 .main__imges{
