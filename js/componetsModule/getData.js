@@ -171,14 +171,16 @@ export const getShip = async (page) => {
             }
         })
     };
-    let res = await fetch("https://api.spacexdata.com/v4/ship/query", options)
+    let res = await fetch("https://api.spacexdata.com/v4/ships/query", options)
     let data = res.json();
     return data;
 };
 
-
-
-
+export const getAllShips = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/ships");
+    let data = res.json();
+    return data;
+};
 
 export const getCompany = async (page) => {
     let options = {
