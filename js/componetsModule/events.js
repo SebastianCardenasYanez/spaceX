@@ -2,6 +2,7 @@ import {templateRocket} from "../module/rockets.js";
 import {templateCapsule} from "../module/capsules.js";
 import {templateCrew} from "../module/crew.js";
 import {templateLaunch} from "../module/launches.js";
+import {templateCores} from "../module/cores.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -58,8 +59,11 @@ rockets__footer?.addEventListener('click', async() => {
   });
   
   cores__footer?.addEventListener('click', async() => {
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
     console.log('Cores footer clicked');
-    // Acción específica para cores__footer
+    await templateCores()
   });
   
   landspads__footer?.addEventListener('click', async() => {

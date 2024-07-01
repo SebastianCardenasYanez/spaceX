@@ -62,7 +62,6 @@ export const centerSection = async (crew) => {
         <span>Engines</span><strong>${crew.docs[0].status}</strong>
         <span>Fuel amount</span><strong>${crew.docs[0].id}</strong>
     </article>
-    <div class="main__imges" >
     
     <div></div>
     `;

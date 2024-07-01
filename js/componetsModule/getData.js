@@ -128,9 +128,11 @@ export const getCores = async (page) => {
     return data;
 };
 
-
-
-
+export const getAllCores = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/cores");
+    let data = res.json();
+    return data;
+};
 
 export const getLaunchPad = async (page) => {
     let options = {
