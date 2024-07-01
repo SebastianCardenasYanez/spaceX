@@ -98,12 +98,16 @@ export const getLaunch = async(page) => {
             }
         })
     };
-    let res = await fetch("https://api.spacexdata.com/v4/launch/query", options)
+    let res = await fetch("https://api.spacexdata.com/v4/launches/query", options)
     let data = res.json();
     return data;
 };
 
-
+export const getAllLaunch = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/launches");
+    let data = res.json();
+    return data;
+};
 
 
 export const getCores = async (page) => {
