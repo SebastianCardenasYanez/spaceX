@@ -1,5 +1,6 @@
 import {templateRocket} from "./module/rockets.js";
 import {eventsListener} from "./componetsModule/events.js";
+import {getAllCrew} from "./componetsModule/getData.js";
 
 let pages = document.querySelectorAll(".page");
 let main__title = document.querySelector(".main__title");
@@ -10,3 +11,5 @@ let section__main_right = document.querySelector(".section__main_right")
 
 await templateRocket();  
 await eventsListener();
+
+console.log(await getAllCrew());
