@@ -134,7 +134,7 @@ export const getAllCores = async() => {
     return data;
 };
 
-export const getLaunchPad = async (page) => {
+export const getLandpads = async (page) => {
     let options = {
         method : "POST",
         headers : {
@@ -147,12 +147,16 @@ export const getLaunchPad = async (page) => {
             }
         })
     };
-    let res = await fetch("https://api.spacexdata.com/v4/launchPads/query", options)
+    let res = await fetch("https://api.spacexdata.com/v4/landpads/query", options)
     let data = res.json();
     return data;
 };
 
-
+export const getAllLandpads = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/landpads");
+    let data = res.json();
+    return data;
+};
 
 export const getShip = async (page) => {
     let options = {
