@@ -4,6 +4,7 @@ import {templateCrew} from "../module/crew.js";
 import {templateLaunch} from "../module/launches.js";
 import {templateCores} from "../module/cores.js";
 import {templateLandpad} from "../module/landPads.js";
+import {templateShips} from "../module/ships.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -77,7 +78,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   ships__footer?.addEventListener('click', async() => {
     console.log('Ships footer clicked');
-    // Acción específica para ships__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateShips()
   });
   
   company__footer?.addEventListener('click', async() => {
