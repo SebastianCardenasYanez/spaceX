@@ -26,15 +26,15 @@ export const leftSection = async (crew) => {
         `
     }else if (crew.docs[0].agency === 'Axiom Space'){
         plantilla += /*html*/`
-        <img src="../storage/AxiomSpaceLogo.svg" alt="">
+        <img src="../storage/Axiom_Space_Logo.png" alt="">
         `
     }else if (crew.docs[0].agency === 'Roscosmos'){
         plantilla += /*html*/`
-        <img src="../storage/Roscosmos.svg" alt="">
+        <img src="../storage/rocosmospng.webp" alt="">
         `
     }else if (crew.docs[0].agency === 'ESA'){
         plantilla += /*html*/`
-        <img src="../storage/esa.svg" alt="">
+        <img src="../storage/esaLogo.png" alt="">
         `
     }
 
