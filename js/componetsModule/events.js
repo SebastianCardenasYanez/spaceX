@@ -1,6 +1,7 @@
 import {templateRocket} from "../module/rockets.js";
 import {templateCapsule} from "../module/capsules.js";
 import {templateCrew} from "../module/crew.js";
+import {templateLaunch} from "../module/launches.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -50,7 +51,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   launches__footer?.addEventListener('click', async() => {
     console.log('Launches footer clicked');
-    // Acción específica para launches__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateLaunch()
   });
   
   cores__footer?.addEventListener('click', async() => {
