@@ -115,7 +115,7 @@ const renderPageButtons = (allCapsules) => {
 
 const addNavigationButtons = async(totalCapsules) => {
     let prevButton = document.createElement('div');
-    prevButton.textContent = 'Prev';
+    prevButton.textContent = '<';
     prevButton.classList.add('prev_page');
     document.querySelector(".containerPrev_page").appendChild(prevButton);
     let selectPrevButton = document.querySelector(".prev_page")
@@ -127,7 +127,7 @@ const addNavigationButtons = async(totalCapsules) => {
         }
     })
     let nextButton = document.createElement('div');
-    nextButton.textContent = 'Prev';
+    nextButton.textContent = '>';
     nextButton.classList.add('next_page');
     document.querySelector(".containerNext_page").appendChild(nextButton);
     let selectNextButton = document.querySelector(".next_page")
