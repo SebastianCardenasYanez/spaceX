@@ -6,6 +6,7 @@ import {templateCores} from "../module/cores.js";
 import {templateLandpad} from "../module/landPads.js";
 import {templateShips} from "../module/ships.js";
 import {templateCompany} from "../module/company.js";
+import {templateDragon} from "../module/dragons.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -95,7 +96,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   dregons__footer?.addEventListener('click', async() => {
     console.log('Dregons footer clicked');
-    // Acción específica para dregons__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateDragon()
   });
   
   history__footer?.addEventListener('click', async() => {

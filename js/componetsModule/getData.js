@@ -207,7 +207,7 @@ export const getAllCompany = async() => {
 };
 
 
-export const getDregons = async (page) => {
+export const getDragons = async (page) => {
     let options = {
         method : "POST",
         headers : {
@@ -220,12 +220,16 @@ export const getDregons = async (page) => {
             }
         })
     };
-    let res = await fetch("https://api.spacexdata.com/v4/dregons/query", options)
+    let res = await fetch("https://api.spacexdata.com/v4/dragons/query", options)
     let data = res.json();
     return data;
 };
 
-
+export const getAllDragons = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/dragons");
+    let data = res.json();
+    return data;
+};
 
 
 export const getHistory = async (page) => {
