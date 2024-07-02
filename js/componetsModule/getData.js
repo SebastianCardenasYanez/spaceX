@@ -182,26 +182,29 @@ export const getAllShips = async() => {
     return data;
 };
 
-export const getCompany = async (page) => {
-    let options = {
-        method : "POST",
-        headers : {
-            "content-type" : "application/json"
-        },
-        body : JSON.stringify({
-            options : {
-                page,
-                limit : 1
-            }
-        })
-    };
-    let res = await fetch("https://api.spacexdata.com/v4/company/query", options)
+// export const getCompany = async (page) => {
+//     let options = {
+//         method : "POST",
+//         headers : {
+//             "content-type" : "application/json"
+//         },
+//         body : JSON.stringify({
+//             options : {
+//                 page,
+//                 limit : 1
+//             }
+//         })
+//     };
+//     let res = await fetch("https://api.spacexdata.com/v4/company/query", options)
+//     let data = res.json();
+//     return data;
+// };
+
+export const getAllCompany = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/company");
     let data = res.json();
     return data;
 };
-
-
-
 
 
 export const getDregons = async (page) => {
