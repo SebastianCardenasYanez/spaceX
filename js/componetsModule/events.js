@@ -8,6 +8,7 @@ import {templateShips} from "../module/ships.js";
 import {templateCompany} from "../module/company.js";
 import {templateDragon} from "../module/dragons.js";
 import {templateHistory} from "../module/history.js"
+import {templateLaunchpad} from "../module/launchpads.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -113,7 +114,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   launchpads__footer?.addEventListener('click', async() => {
     console.log('Launchpads footer clicked');
-    // Acción específica para launchpads__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateLaunchpad();
   });
   
   payloads__footer?.addEventListener('click', async() => {
