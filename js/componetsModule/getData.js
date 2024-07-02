@@ -274,9 +274,11 @@ export const getLaunchPads = async (page) => {
     return data;
 };
 
-
-
-
+export const getAllLaunchPads = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/launchPads");
+    let data = res.json();
+    return data;
+};
 
 export const getPayLoads = async (page) => {
     let options = {
