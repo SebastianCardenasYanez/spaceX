@@ -7,6 +7,7 @@ import {templateLandpad} from "../module/landPads.js";
 import {templateShips} from "../module/ships.js";
 import {templateCompany} from "../module/company.js";
 import {templateDragon} from "../module/dragons.js";
+import {templateHistory} from "../module/history.js"
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -104,7 +105,10 @@ rockets__footer?.addEventListener('click', async() => {
   
   history__footer?.addEventListener('click', async() => {
     console.log('History footer clicked');
-    // Acción específica para history__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateHistory()
   });
   
   launchpads__footer?.addEventListener('click', async() => {

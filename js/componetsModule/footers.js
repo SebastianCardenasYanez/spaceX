@@ -846,7 +846,7 @@ export const footerLaunchpads = async () => {
             </article>
 
             <article class="article__footer" id="crew__footer">
-                <img src="storage/crewWithe.svg" alt="">
+                <img src="storage/crewWhite.svg" alt="">
                 <span>Crew</span>
             </article>
 

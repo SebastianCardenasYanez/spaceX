@@ -250,8 +250,11 @@ export const getHistory = async (page) => {
     return data;
 };
 
-
-
+export const getAllHistory = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/history");
+    let data = res.json();
+    return data;
+};
 
 export const getLaunchPads = async (page) => {
     let options = {
