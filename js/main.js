@@ -1,6 +1,6 @@
 import {templateRocket} from "./module/rockets.js";
 import {eventsListener} from "./componetsModule/events.js";
-import {getDragons, getLaunchPads, getAllCompany} from "./componetsModule/getData.js";
+import {getDragons, getLaunchPads, getAllPayLoads} from "./componetsModule/getData.js";
 
 let pages = document.querySelectorAll(".page");
 let main__title = document.querySelector(".main__title");
@@ -11,5 +11,5 @@ let section__main_right = document.querySelector(".section__main_right")
 
 await templateRocket();  
 await eventsListener();
-let prueba = await getLaunchPads(6)
-console.log(prueba.docs[0].rockets[1]);
+let prueba = await getAllPayLoads()
+console.log(prueba);

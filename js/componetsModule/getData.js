@@ -293,12 +293,16 @@ export const getPayLoads = async (page) => {
             }
         })
     };
-    let res = await fetch("https://api.spacexdata.com/v4/payLoads/query", options)
+    let res = await fetch("https://api.spacexdata.com/v4/payloads/query", options)
     let data = res.json();
     return data;
 };
 
-
+export const getAllPayLoads = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/payloads");
+    let data = res.json();
+    return data;
+};
 
 
 export const getRoadster = async (page) => {
