@@ -323,9 +323,11 @@ export const getRoadster = async (page) => {
     return data;
 };
 
-
-
-
+export const getAllRoadster = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/roadster");
+    let data = res.json();
+    return data;
+};
 
 export const getStarlink = async (page) => {
     let options = {
