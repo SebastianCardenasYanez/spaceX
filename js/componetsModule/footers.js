@@ -664,7 +664,7 @@ export const footerCompany = async () => {
 
 // ---- DREGONS ----
 
-export const footerDregons = async () => {
+export const footerDragons = async () => {
     let plantilla = "";
     plantilla = /*html*/`
     <div class="triangle__left"></div>

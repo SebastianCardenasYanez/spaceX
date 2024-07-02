@@ -101,7 +101,6 @@ export const templateCores = async() => {
     footer.innerHTML = await footerCores();
     main__title.innerHTML = cores.docs[0].serial;
     await eventsListener()
-    footer.innerHTML = await footerCores();
 
     renderPageButtons(allCores);
     addNavigationButtons(allCores.length);

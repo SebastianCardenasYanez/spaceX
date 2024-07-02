@@ -106,8 +106,7 @@ export const templateCrew = async() => {
     section__main_right.innerHTML = await rightSection(crew);
     footer.innerHTML = await footerCrew();
     main__title.innerHTML = crew.docs[0].name;
-    await eventsListener()
-    footer.innerHTML = await footerCrew();
+    await eventsListener();
 
     renderPageButtons(allCrew);
     addNavigationButtons(allCrew.length);

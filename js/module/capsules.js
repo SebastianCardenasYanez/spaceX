@@ -46,7 +46,6 @@ export const centerSection = async(capsules) => {
     <strong class="title__table">Activity</strong>
     <hr>
     <span>Status</span><strong>${capsules.docs[0].status}</strong>
-    <span>Launches</span><strong>${capsules.docs[0].launches}</strong>
     <span>Reuse count</span><strong>${capsules.docs[0].reuse_count}</strong>
     </article>
 
@@ -72,14 +71,12 @@ export const templateCapsule = async() => {
     pages.innerHTML = "";
     let allCapsules = await getAllCapsules();
     capsule =await getCapsule(1);
-    console.log(capsule.docs[0].serial);
+    main__title.innerHTML = capsule.docs[0].serial;
     section__main_left.innerHTML = await leftSection(capsule);
     section__main_center.innerHTML = await centerSection(capsule);
     section__main_right.innerHTML = "";
-    main__title.innerHTML = capsule.docs[0].serial;
     footer.innerHTML = await footerCapsules();
-    await eventsListener()
-    footer.innerHTML = await footerCapsules();
+    await eventsListener();
 
     renderPageButtons(allCapsules);
     addNavigationButtons(allCapsules.length);

@@ -99,8 +99,7 @@ export const templateShips = async() => {
     section__main_right.innerHTML = await rightSection(ship);
     footer.innerHTML = await footerShip();
     main__title.innerHTML = ship.docs[0].name;
-    await eventsListener()
-    footer.innerHTML = await footerShip();
+    await eventsListener();
 
     renderPageButtons(allShips);
     addNavigationButtons(allShips.length);

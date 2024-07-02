@@ -127,8 +127,7 @@ export const templateCompany = async() => {
     section__main_right.innerHTML = await rightSection(allCompany);
     footer.innerHTML = await footerCompany();
     main__title.innerHTML = allCompany.name;
-    await eventsListener()
-    footer.innerHTML = await footerCompany();
+    await eventsListener();
 
     renderPageButtons(allCompany);
     addNavigationButtons(allCompany.length);

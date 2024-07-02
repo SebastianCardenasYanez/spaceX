@@ -148,8 +148,7 @@ export const templateLaunch = async() => {
     section__main_right.innerHTML = await rightSection(launch);
     footer.innerHTML = await footerLaunch();
     main__title.innerHTML = launch.docs[0].name;
-    await eventsListener()
-    footer.innerHTML = await footerLaunch();
+    await eventsListener();
 
     renderPageButtons(allLaunch);
     addNavigationButtons(allLaunch.length);

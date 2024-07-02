@@ -202,7 +202,6 @@ export const templateRocket = async() => {
     footer.innerHTML = await footerRocket();
     main__title.innerHTML = nameRocket.docs[0].name;
     await eventsListener()
-    console.log(allRockets);
 
     renderPageButtons(allRockets);
     addNavigationButtons(allRockets.length);

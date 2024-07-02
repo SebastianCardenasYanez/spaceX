@@ -105,8 +105,7 @@ export const templateLandpad = async() => {
     section__main_right.innerHTML = await rightSection(landpad);
     footer.innerHTML = await footerLandspad();
     main__title.innerHTML = landpad.docs[0].full_name;
-    await eventsListener()
-    footer.innerHTML = await footerLandspad();
+    await eventsListener();
 
     renderPageButtons(allLandpad);
     addNavigationButtons(allLandpad.length);
