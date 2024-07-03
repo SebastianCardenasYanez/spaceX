@@ -53,7 +53,7 @@ export const centerSection = async (payloads) => {
 
     <div></div>
 
-    <img src="../storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
 
     <div></div>
     

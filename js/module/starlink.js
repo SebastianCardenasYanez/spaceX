@@ -103,7 +103,7 @@ export const centerSection = async (starlink) => {
 
     <div></div>
 
-    <img src="../storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
 
     <div></div>
     

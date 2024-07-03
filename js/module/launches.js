@@ -51,7 +51,7 @@ export const centerSection = async(launch) => {
     plantilla = /*html*/`
     <div></div>
 
-    <img src="../storage/rocketCenter.png" width="320px" height="200px" >
+    <img src="storage/rocketCenter.png" width="320px" height="200px" >
 
     <div></div>
 
