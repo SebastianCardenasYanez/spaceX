@@ -105,19 +105,19 @@ export const rightSection = async (launch) => {
     <article class="article__section_right">
         <span>More information</span>
             <a src="${launch.docs[0].links.webcast}">
-            <img src="../storage/youtube.svg" width="100px" >
+            <img src="storage/youtube.svg" width="100px" >
             </a>
     </article>
 
     <article class="article__section_right">
         <a src="${launch.docs[0].links.article}">
-        <img src="../storage/article-svgrepo-com.svg" width="100px" >
+        <img src="storage/article-svgrepo-com.svg" width="100px" >
         </a>
     </article>
 
     <article class="article__section_right">
         <a src="${launch.docs[0].links.wikipedia}">
-        <img src="../storage/Wikipedia-Logo.png" width="100px" >
+        <img src="storage/Wikipedia-Logo.png" width="100px" >
         </a>
 </article>
     `

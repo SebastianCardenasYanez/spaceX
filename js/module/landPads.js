@@ -74,7 +74,7 @@ export const rightSection = async (landpad) => {
     <article class="article__section_right">
         <span>More information</span>
             <a src="${landpad.docs[0].wikipedia}">
-            <img src="../storage/Wikipedia-Logo.png" width="100px" >
+            <img src="storage/Wikipedia-Logo.png" width="100px" >
             </a>
     </article>
     `

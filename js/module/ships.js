@@ -67,7 +67,7 @@ export const rightSection = async (ships) => {
     <article class="article__section_right">
         <span>More information</span>
             <a src="${ships.docs[0].link}">
-            <img src="../storage/icon_marineTraffic.png" width="100px" >
+            <img src="storage/icon_marineTraffic.png" width="100px" >
             </a>
     </article>
     `

@@ -14,27 +14,27 @@ export const leftSection = async (crew) => {
         `
     if(crew.docs[0].agency === 'NASA'){
         plantilla += /*html*/`
-        <img src="../storage/nasa.jpg" alt="">
+        <img src="storage/nasa.jpg" alt="">
         `
     }else if (crew.docs[0].agency === 'JAXA'){
         plantilla += /*html*/`
-        <img src="../storage/Jaxa_logo.svg.png" alt="">
+        <img src="storage/Jaxa_logo.svg.png" alt="">
         `
     }else if (crew.docs[0].agency === 'SpaceX'){
         plantilla += /*html*/`
-        <img src="../storage/SpaceX_logo_black.svg.png" alt="">
+        <img src="storage/SpaceX_logo_black.svg.png" alt="">
         `
     }else if (crew.docs[0].agency === 'Axiom Space'){
         plantilla += /*html*/`
-        <img src="../storage/Axiom_Space_Logo.png" alt="">
+        <img src="storage/Axiom_Space_Logo.png" alt="">
         `
     }else if (crew.docs[0].agency === 'Roscosmos'){
         plantilla += /*html*/`
-        <img src="../storage/rocosmospng.webp" alt="">
+        <img src="storage/rocosmospng.webp" alt="">
         `
     }else if (crew.docs[0].agency === 'ESA'){
         plantilla += /*html*/`
-        <img src="../storage/esaLogo.png" alt="">
+        <img src="storage/esaLogo.png" alt="">
         `
     }
 
@@ -74,7 +74,7 @@ export const rightSection = async (crew) => {
     <article class="article__section_right">
         <span>More information</span>
             <a src="${crew.docs[0].wikipedia}">
-            <img src="../storage/Wikipedia-Logo.png" width="100px" >
+            <img src="storage/Wikipedia-Logo.png" width="100px" >
             </a>
     </article>
     `

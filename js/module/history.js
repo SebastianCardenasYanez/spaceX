@@ -52,7 +52,7 @@ export const rightSection = async (history) => {
     <article class="article__section_right">
         <span>More information</span>
             <a src="${history.docs[0].links.article}">
-            <img src="../storage/x_spaceX.webp" width="100px" >
+            <img src="storage/x_spaceX.webp" width="100px" >
             </a>
     </article>
     `

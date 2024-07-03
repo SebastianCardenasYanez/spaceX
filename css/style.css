@@ -14,8 +14,6 @@ body{
     align-self: center;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    max-height: 70%;
-    bottom: 90px;
 }
 /*---  HEADER  ---*/
 
