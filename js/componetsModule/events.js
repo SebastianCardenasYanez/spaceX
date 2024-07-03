@@ -11,6 +11,7 @@ import {templateHistory} from "../module/history.js"
 import {templateLaunchpad} from "../module/launchpads.js";
 import {templatePayloads} from "../module/payloads.js";
 import {templateRoadster} from "../module/roadster.js";
+import {templateStarlink} from "../module/starlink.js";
 
 
 let section__main_center = document.querySelector(".section__main_center")
@@ -140,6 +141,9 @@ rockets__footer?.addEventListener('click', async() => {
   
   starlink__footer?.addEventListener('click', async() => {
     console.log('Starlink footer clicked');
-    // Acción específica para starlink__footer
+    section__main_left.innerHTML = '';
+    section__main_center.innerHTML = '';
+    section__main_right.innerHTML = '';
+    await templateStarlink();
   });
 }

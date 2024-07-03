@@ -346,3 +346,9 @@ export const getStarlink = async (page) => {
     let data = res.json();
     return data;
 };
+
+export const getAllStarlink = async() => {
+    let res = await fetch("https://api.spacexdata.com/v4/starlink");
+    let data = res.json();
+    return data;
+};
