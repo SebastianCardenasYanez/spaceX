@@ -58,7 +58,7 @@ export const centerSection = async (payloads) => {
     <div></div>
     
     <article class="article__section_center">
-        <strong class="title__table">info</strong>
+        <strong class="title__table">Detail</strong>
         <hr>
         <span>Mass kg</span><strong>${payloads.docs[0].mass_kg}</strong>
         <span>Mass lbs</span><strong>${payloads.docs[0].mass_lbs}</strong>
@@ -76,7 +76,7 @@ export const centerSection = async (payloads) => {
     </article>
     
     <article class="article__section_center">
-        <strong class="title__table">ASDS</strong>
+        <strong class="title__table">Detail</strong>
         <hr>
         <span>Period min</span><strong>${payloads.docs[0].period_min}</strong>
         <span>Lifespan years</span><strong>${payloads.docs[0].lifespan_years}</strong>

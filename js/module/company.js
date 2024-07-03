@@ -83,21 +83,20 @@ export const rightSection = async (allCompany) => {
     <article class="article__section_right">
         <span>Redes</span>
             <a src="${allCompany.links.website}">
-            <img src="../storage/x_spaceX.webp" width="70px" >
+            <img src="storage/x_spaceX.webp" width="70px" >
             </a>
     </article>
 
     <article class="article__section_right">
     <span>Redes</span>
-            <a src="${allCompany.links.website}">
-            <img src="../storage/x_spaceX.webp" width="70px" >
+            <a src="${allCompany.links.flickr}">
+            <img src="storage/x_spaceX.webp" width="70px" >
             </a>
     </article>
 
     <article class="article__section_right">
-    <span>Redes</span>
-        <a src="${allCompany.links.website}">
-        <img src="../storage/x_spaceX.webp" width="70px" >
+        <a src="${allCompany.links.twitter}">
+        <img src="storage/x_twitter.avif" width="70px" >
         </a>
     </article>
     `
