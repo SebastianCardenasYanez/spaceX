@@ -38,8 +38,14 @@ export const centerSection = async(history) => {
 
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="320px" height="200px" >
+    <img src="storage/rocketCenter.png" width="320px" height="220px" >
 
+    <div></div>
+
+    <div></div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Spaceflight_SSO-A_Mission_%2845257570925%29.jpg" width="300px" height="520px" style="border-radius: 20px">
+    
     <div></div>
 
     `;
@@ -51,7 +57,7 @@ export const rightSection = async (history) => {
     plantilla += /*html*/`
     <article class="article__section_right">
         <span>More information</span>
-            <a src="${history.docs[0].links.article}">
+            <a href="${history.docs[0].links.article}">
             <img src="storage/x_spaceX.webp" width="100px" >
             </a>
     </article>

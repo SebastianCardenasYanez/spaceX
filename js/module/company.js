@@ -44,7 +44,7 @@ export const centerSection = async(allCompany) => {
 
     <div></div>
 
-    <img src="storage/elon-musk.webp" width="200px">
+    <img src="storage/elon-musk.webp" width="200px" style="border-radius: 20px">
 
     <div></div>
 
@@ -73,6 +73,14 @@ export const centerSection = async(allCompany) => {
         <span>launch sites</span><strong>${allCompany.launch_sites}</strong>
         <span>test_sites</span><strong>${allCompany.test_sites}</strong>
     </article>
+
+    <div></div>
+
+    <img src="https://statics.forbesargentina.com/2021/12/61bc9416bf410.jpg" width="350px" height="220px" style="border-radius: 20px">
+    
+    <div></div>
+
+
     `;
     return plantilla
 };
@@ -82,20 +90,20 @@ export const rightSection = async (allCompany) => {
     plantilla += /*html*/`
     <article class="article__section_right">
         <span>Redes</span>
-            <a src="${allCompany.links.website}">
+            <a href="${allCompany.links.website}">
             <img src="storage/x_spaceX.webp" width="70px" >
             </a>
     </article>
 
     <article class="article__section_right">
     <span>Redes</span>
-            <a src="${allCompany.links.flickr}">
+            <a href="${allCompany.links.flickr}">
             <img src="storage/flickr_logo.webp" width="70px" >
             </a>
     </article>
 
     <article class="article__section_right">
-        <a src="${allCompany.links.twitter}">
+        <a href="${allCompany.links.twitter}">
         <img src="storage/x_twitter.avif" width="70px" >
         </a>
     </article>

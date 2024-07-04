@@ -103,7 +103,7 @@ export const centerSection = async (starlink) => {
 
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="380px" referrerpolicy="no-referrer" >
 
     <div></div>
     
@@ -132,6 +132,12 @@ export const centerSection = async (starlink) => {
         <span>MOTION_DDOT</span><strong>${starlink.docs[0].spaceTrack.MEAN_MOTION_DDOT}</strong>
         <span>ELEMENT THEORY</span><strong>${starlink.docs[0].spaceTrack.MEAN_ELEMENT_THEORY}</strong>
     </article>
+
+    <div></div>
+
+    <div></div>
+
+    <div></div>
     `;
     return plantilla
 }

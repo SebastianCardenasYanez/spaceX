@@ -57,6 +57,13 @@ export const centerSection = async(ships) => {
     <span>speed kn</span><strong>${ships.docs[0].speed_kn}</strong>
 
     </article>
+
+    <div></div>
+
+    <img src="storage/pexels-pixabay-144237.jpg" width="450px" height="320px" style="border-radius: 20px">
+    
+    <div></div>
+
     `;
     return plantilla
 };

@@ -53,7 +53,7 @@ export const centerSection = async (payloads) => {
 
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="320px" height="220px" referrerpolicy="no-referrer" >
 
     <div></div>
     
@@ -83,6 +83,12 @@ export const centerSection = async (payloads) => {
         <span>Mean motion</span><strong>${payloads.docs[0].mean_motion}</strong>
         <span>Mean anomaly</span><strong>${payloads.docs[0].mean_anomaly}</strong>
     </article>
+
+    <div></div>
+
+    <img src="storage/payloads.png" width="320px" height="320px">
+
+    <div></div>
     `;
     return plantilla
 }
@@ -91,7 +97,7 @@ export const rightSection = async (payloads) => {
     let plantilla = "";
     plantilla += /*html*/`
     <article class="article__section_right">
-        <h2 class="title_right_section">Dragon</h2>
+        <h2 id="dragons_title" class="title_right_section">Dragon</h2>
         <span>Capsule</span>
         <strong>${payloads.docs[0].dragon.capsule}</strong>
     </article>

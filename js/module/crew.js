@@ -49,7 +49,7 @@ export const centerSection = async (crew) => {
 
     <div></div>
 
-    <img src="${crew.docs[0].image}" width="180px" height="250px" referrerpolicy="no-referrer" >
+    <img src="${crew.docs[0].image}" width="350px" height="470px" style="border-radius: 20px; box-shadow: 0px 0px 15px 2px #ffffff" referrerpolicy="no-referrer">
 
     <div></div>
     
@@ -73,7 +73,7 @@ export const rightSection = async (crew) => {
     plantilla += /*html*/`
     <article class="article__section_right">
         <span>More information</span>
-            <a src="${crew.docs[0].wikipedia}">
+            <a href="${crew.docs[0].wikipedia}">
             <img src="storage/Wikipedia-Logo.png" width="100px" >
             </a>
     </article>

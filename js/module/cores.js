@@ -27,7 +27,7 @@ export const centerSection = async (core) => {
 
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="350px" height="220px" style="border-radius: 20px" referrerpolicy="no-referrer" >
 
     <div></div>
     
@@ -46,6 +46,13 @@ export const centerSection = async (core) => {
         <span>Reusable</span><strong>${core.docs[0].asds_attempts}</strong>
         <span>Engines</span><strong>${core.docs[0].asds_landings}</strong>
     </article>
+
+    <div></div>
+
+    <img src="https://intn24.lalr.co/cms/2023/12/01153216/Descarga-2023-12-01T152928.244.jpg?w=480" width="350px" height="220px" style="border-radius: 20px" referrerpolicy="no-referrer" >
+
+    <div></div>
+
     `;
     return plantilla
 }

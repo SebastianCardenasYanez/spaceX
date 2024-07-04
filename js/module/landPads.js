@@ -27,7 +27,7 @@ export const centerSection = async (landpad) => {
 
     <div></div>
 
-    <img src="${landpad.docs[0].images.large[0]}" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="${landpad.docs[0].images.large[0]}" width="450px" height="320px" style="border-radius: 20px" referrerpolicy="no-referrer" >
 
     <div></div>
     

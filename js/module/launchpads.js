@@ -43,7 +43,7 @@ export const centerSection = async(launchpad) => {
 
     <div></div>
     
-    <img src="${launchpad.docs[0].images.large}"  width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="${launchpad.docs[0].images.large}"  width="320px" height="220px" referrerpolicy="no-referrer" style="border-radius: 20px">
 
 
     <div></div>
@@ -86,6 +86,10 @@ export const centerSection = async(launchpad) => {
     <div></div>
 
     <div></div>
+
+    <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Launch_pad_40_awaiting_Falcon_9_rocket.jpg"  width="320px" height="220px" referrerpolicy="no-referrer" style="border-radius: 20px">
+    </div>
 
     <div></div>
     `;

@@ -29,7 +29,7 @@ export const centerSection = async(capsules) => {
     plantilla = /*html*/`
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="320px" height="200px" >
+    <img src="storage/rocketCenter.png"  width="350px" height="220px" >
 
     <div></div>
 
@@ -52,6 +52,16 @@ export const centerSection = async(capsules) => {
     `;
     return plantilla
 };
+
+export const rightSection = async () => {
+    let plantilla = "";
+    plantilla += /*html*/`
+    <img src="https://static.foxnews.com/foxnews.com/content/uploads/2022/03/Screen-Shot-2022-03-24-at-1.41.51-PM-low_res-scale-2_00x-gigapixel.png" width="350px" height="220px" style="border-radius: 20px" referrerpolicy="no-referrer" >
+`
+return plantilla;
+}
+
+
 let pages = document.querySelector(".page"); 
 let main__title = document.querySelector(".main__title");
 let section__main_center = document.querySelector(".section__main_center");
@@ -74,7 +84,7 @@ export const templateCapsule = async() => {
     main__title.innerHTML = capsule.docs[0].serial;
     section__main_left.innerHTML = await leftSection(capsule);
     section__main_center.innerHTML = await centerSection(capsule);
-    section__main_right.innerHTML = "";
+    section__main_right.innerHTML = await rightSection();
     footer.innerHTML = await footerCapsules();
     await eventsListener();
 
@@ -103,7 +113,7 @@ const renderPageButtons = (allCapsules) => {
             main__title.innerHTML = capsule.docs[0].serial;
             section__main_left.innerHTML = await leftSection(capsule);
             section__main_center.innerHTML = await centerSection(capsule);
-            section__main_right.innerHTML = "";
+            section__main_right.innerHTML = await rightSection();
             footer.innerHTML = await footerCapsules();
             await eventsListener()
  })

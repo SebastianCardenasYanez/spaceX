@@ -44,7 +44,7 @@ export const centerSection = async (dragon) => {
 
     <div></div>
 
-    <img src="storage/rocketCenter.png" width="250px" height="160px" referrerpolicy="no-referrer" >
+    <img src="storage/rocketCenter.png" width="320px" height="220px" referrerpolicy="no-referrer" >
 
     <div></div>
     

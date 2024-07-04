@@ -5,10 +5,10 @@ import {eventsListener} from "../componetsModule/events.js";
 export const leftSection = async (roadster) => {
     let plantilla = "";
         plantilla = /*html*/`
-        <article class="article__section_left">
+        <article id="roadster_left"  class="article__section_left">
             <div class="text__section_left">
-                <h3 class="title__descrip" >Details</h3>
-                <p>${roadster.details}</p> 
+                <h3 id="title_left_roadster" class="title__descrip" >Details</h3>
+                <p id="descrip__paragraf">${roadster.details}</p> 
             </div>
         </article>
         `
@@ -62,9 +62,13 @@ export const centerSection = async (roadster) => {
         <span>Mean anomaly</span><strong>${roadster.mean_anomaly}</strong>
     </article>
 
-    <div></div>
+    <div>
+    <img src="https://carwow-uk-wp-2.imgix.net/New-Tesla-Roadster-lead.png?auto=format&cs=tinysrgb&fit=crop&h=800&ixlib=rb-1.1.0&q=60&w=1600" width="320px" height="180px" style="border-radius: 20px">
+    </div>
 
-    <div></div>
+    <div>
+    <img src="https://assets.newatlas.com/dims4/default/90bb00f/2147483647/strip/true/crop/1440x900+0+0/resize/1440x900!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Felon-musk-tesla-roadster-spacex-1.jpg" width="320px" height="220px" style="border-radius: 20px">
+    </div>
     `;
     return plantilla
 }
