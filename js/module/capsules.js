@@ -81,6 +81,7 @@ export const templateCapsule = async() => {
     pages.innerHTML = "";
     let allCapsules = await getAllCapsules();
     capsule =await getCapsule(1);
+    console.log(capsule.docs[0].serial)
     main__title.innerHTML = capsule.docs[0].serial;
     section__main_left.innerHTML = await leftSection(capsule);
     section__main_center.innerHTML = await centerSection(capsule);
@@ -105,7 +106,6 @@ const renderPageButtons = (allCapsules) => {
 
     let page_btn = document.querySelectorAll(".page_btn");
     page_btn.forEach(pag => {
-        main__title.innerHTML = "";
         console.log(pag)
         pag.addEventListener("click", async(e) => {
             let page = pag.textContent;
